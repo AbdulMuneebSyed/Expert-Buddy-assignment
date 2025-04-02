@@ -74,7 +74,7 @@ export default function LandingPageCarousel() {
       }
     };
 
-    const element = api?.carouselRef?.current; // Add null check for carouselRef
+    const element = document.querySelector(".embla"); // Use a class or ref to target the carousel element
     if (element) {
       element.addEventListener("mouseenter", handleMouseEnter);
       element.addEventListener("mouseleave", handleMouseLeave);
