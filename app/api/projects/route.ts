@@ -56,6 +56,6 @@ const mockProjects: Project[] = [
   },
 ];
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: NextApiRequest, res: NextApiResponse) {
   res.status(200).json(mockProjects);
 }
