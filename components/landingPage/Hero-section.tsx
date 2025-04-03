@@ -5,9 +5,14 @@ import hero from "@/public/hero (1).png"
 import BG from "@/public/BG.png";
 import { useState } from "react";
 import { Button } from "../ui/Button";
+import SignUpModal from "./SignupModal";
+import XpertModal from "../chooseExpert/ExpertModel";
 export function Hero() {
   const [enabled, setEnabled] = useState(false);
-
+   const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isXpertModalOpen, setIsXpertModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
   return (
     <div
       className="relative text-black min-h-screen"
@@ -58,7 +63,11 @@ export function Hero() {
               when you accept <br /> an offer!
             </p>
           </div>
-          <Button variant={"destructive"} className="w-40 h-12 rounded-4xl bg-[#A414D5] text-white p-3 mt-6 hover:cursor-pointer">
+          <Button
+            onClick={openModal}
+            variant={"destructive"}
+            className="w-40 h-12 rounded-4xl bg-[#A414D5] text-white p-3 mt-6 hover:cursor-pointer"
+          >
             Find An Expert
           </Button>
         </div>
@@ -76,7 +85,12 @@ export function Hero() {
           </div>
         </div>
       </div>
-
+      <SignUpModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        setExpertModel={setIsXpertModalOpen}
+      />
+      <XpertModal isOpen={isXpertModalOpen} setIsOpen={setIsXpertModalOpen} />
       {/* Floating Action Buttons */}
     </div>
   );

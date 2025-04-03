@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -16,6 +16,7 @@ import trust3 from "@/public/trust3.png";
 import trust4 from "@/public/trust4.png";
 
 export default function LandingPageCarousel() {
+    
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
