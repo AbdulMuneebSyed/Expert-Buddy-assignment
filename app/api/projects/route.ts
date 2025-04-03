@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 
 type Project = {
   id: string;
@@ -56,6 +56,6 @@ const mockProjects: Project[] = [
   },
 ];
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
-  res.status(200).json(mockProjects);
+export async function GET() {
+  return NextResponse.json(mockProjects);
 }
