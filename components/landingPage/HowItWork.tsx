@@ -12,7 +12,7 @@ import XpertModal from '../chooseExpert/ExpertModel';
 const HowItWork = () => {
    const [isXpertModalOpen, setIsXpertModalOpen] = useState(false);
   return (
-    <div className="relative">
+    <div className="relative my-24">
       <p className="text-5xl text-center relative text-black font-bold">
         <span className="relative">
           {" "}
@@ -72,7 +72,7 @@ const HowItWork = () => {
         </MagicCard>
 
         {/* connector */}
-        <div className="hidden md:flex absolute top-20 items-center justify-center z-50">
+        <div className="hidden md:flex absolute top-20 items-center justify-center z-10">
           <div className="relative w-32 h-1 bg-blue-600">
             <div className="absolute -top-1 -left-1 w-3 h-3 bg-purple-600 rounded-full"></div>
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-purple-600 rounded-full"></div>
