@@ -1,4 +1,4 @@
-"use client";
+
 import FloatingActionButton from "@/components/Floating-action";
 import TestimonialSection from "@/components/landingPage/banner";
 import ExpertConsultation from "@/components/landingPage/ExpertConsultation";
@@ -12,9 +12,7 @@ import OfferCard from "@/components/landingPage/offercard";
 import FAQSection from "@/components/landingPage/faq";
 
 const Home = () => {
-  const [isLogged, setIsLogged] = useState(() => {
-    return JSON.parse(localStorage.getItem("isLogged") || "false");
-  });
+
 
   return (
     <div className="bg-white max-w-screen overflow-clip">

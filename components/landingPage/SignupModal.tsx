@@ -18,7 +18,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({
   const modalRef = useRef(null);
 
   const handleSignup = () => {
-    localStorage.setItem("isLogged", JSON.stringify(true)); // Set isLogged to true
+   
     onClose();
     setExpertModel(true);
   };
