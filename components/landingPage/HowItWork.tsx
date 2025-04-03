@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { MagicCard } from '../ui/MagicCard'
 // import { theme } from "next-themes";
 import { Button } from '../ui/Button';
@@ -7,7 +8,9 @@ import step1 from "@/public/Group 316128066.png"
 import step2 from "@/public/Group 316128051.png"
 import step3 from "@/public/Group 316128012.png"
 import vector from "@/public/Vector-how.png"
+import XpertModal from '../chooseExpert/ExpertModel';
 const HowItWork = () => {
+   const [isXpertModalOpen, setIsXpertModalOpen] = useState(false);
   return (
     <div className="relative">
       <p className="text-5xl text-center relative text-black font-bold">
@@ -48,7 +51,10 @@ const HowItWork = () => {
                   requirements, and set the deadline.
                 </p>
 
-                <Button className="bg-[#1a1e2e] hover:bg-[#2a2e3e] text-white rounded-full px-6 md:px-8 py-3 md:py-4 h-auto">
+                <Button
+                  onClick={() => setIsXpertModalOpen(true)}
+                  className="bg-[#1a1e2e] hover:bg-[#2a2e3e] text-white rounded-full px-6 md:px-8 py-3 md:py-4 h-auto"
+                >
                   Get Started
                 </Button>
               </div>
@@ -96,7 +102,10 @@ const HowItWork = () => {
                   requirements, and set the deadline.
                 </p>
 
-                <Button className="bg-[#1a1e2e] hover:bg-[#2a2e3e] text-white rounded-full px-6 md:px-8 py-3 md:py-4 h-auto">
+                <Button
+                  onClick={() => setIsXpertModalOpen(true)}
+                  className="bg-[#1a1e2e] hover:bg-[#2a2e3e] text-white rounded-full px-6 md:px-8 py-3 md:py-4 h-auto"
+                >
                   Get Started
                 </Button>
               </div>
@@ -149,7 +158,10 @@ const HowItWork = () => {
               requirements, and set the deadline.
             </p>
 
-            <Button className="bg-[#1a1e2e] hover:bg-[#2a2e3e] text-white rounded-full px-6 md:px-8 py-3 md:py-4 w h-auto">
+            <Button
+              onClick={() => setIsXpertModalOpen(true)}
+              className="bg-[#1a1e2e] hover:bg-[#2a2e3e] text-white rounded-full px-6 md:px-8 py-3 md:py-4 w h-auto"
+            >
               Get Started
             </Button>
           </div>
@@ -164,6 +176,7 @@ const HowItWork = () => {
           />
         </div>
       </div>
+      <XpertModal isOpen={isXpertModalOpen} setIsOpen={setIsXpertModalOpen} />
     </div>
   );
 }

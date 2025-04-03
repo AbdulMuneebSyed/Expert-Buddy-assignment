@@ -103,7 +103,7 @@ export default function Home() {
                     />{" "}
                     C
                   </span>
-                  hoose an exoert for your project
+                  hoose an expert for your project
                 </span>
               </div>
 

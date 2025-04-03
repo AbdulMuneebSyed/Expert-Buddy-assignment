@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/input";
@@ -9,8 +10,11 @@ import frame1 from "@/public/Frame (1).png";
 import frame2 from "@/public/Frame.png";
 import frame3 from "@/public/Group (2).png";
 import vector from "@/public/Vector (4).png";
+import { useState } from "react";
+import XpertModal from "../chooseExpert/ExpertModel";
 
 export default function ExpertConsultation() {
+   const [isXpertModalOpen, setIsXpertModalOpen] = useState(false);
   return (
     <div className="w-full relative flex min-h-screen flex-col bg-white">
       {/* Expert section */}
@@ -58,7 +62,10 @@ export default function ExpertConsultation() {
                   </div>
                 </div>
                 <div>
-                  <Button className="bg-[#111827] hover:bg-[#1f2937] text-white shadow-lg sm:shadow-2xl rounded-full px-6 sm:px-8 py-3 sm:py-4 h-auto font-medium text-sm sm:text-base w-full sm:w-auto">
+                  <Button
+                    onClick={() => setIsXpertModalOpen(true)}
+                    className="bg-[#111827] hover:bg-[#1f2937] text-white shadow-lg sm:shadow-2xl rounded-full px-6 sm:px-8 py-3 sm:py-4 h-auto font-medium text-sm sm:text-base w-full sm:w-auto"
+                  >
                     Find an Expert
                   </Button>
                 </div>
@@ -103,7 +110,7 @@ export default function ExpertConsultation() {
           </div>
         </div>
       </div>
-
+      <XpertModal isOpen={isXpertModalOpen} setIsOpen={setIsXpertModalOpen} />
       {/* Feature section */}
       <div className="absolute -bottom-16 sm:-bottom-6 md:bottom-4 lg:bottom-10 left-0 right-0 px-4">
         <div className="max-w-5xl mx-auto">
