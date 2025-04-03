@@ -1,4 +1,4 @@
-
+"use client"
 import FloatingActionButton from "@/components/Floating-action";
 import TestimonialSection from "@/components/landingPage/banner";
 import ExpertConsultation from "@/components/landingPage/ExpertConsultation";
