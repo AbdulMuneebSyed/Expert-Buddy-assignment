@@ -15,7 +15,7 @@ import SignUpModal from "@/components/landingPage/SignupModal";
 const Home = () => {
  
   return (
-    <div className="bg-white">
+    <div className="bg-white max-w-screen overflow-clip">
       <Navbar />
       <Hero />
       <FloatingActionButton />
