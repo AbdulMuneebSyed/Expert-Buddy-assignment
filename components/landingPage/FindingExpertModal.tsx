@@ -98,7 +98,7 @@ const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black text-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div
         ref={modalRef}
         className="bg-white rounded-lg w-full max-w-4xl relative"
@@ -112,7 +112,9 @@ const WelcomeModal = ({ isOpen, onClose }: WelcomeModalProps) => {
         </button>
 
         {/* Title */}
-        <h2 className="text-xl font-bold p-6 pb-4">Welcome XpertBuddy</h2>
+        <h2 className="text-xl font-bold text-black p-6 pb-4">
+          Welcome XpertBuddy
+        </h2>
 
         <div className="flex flex-col md:flex-row">
           {/* Left Column */}

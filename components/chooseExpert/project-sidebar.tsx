@@ -42,10 +42,10 @@ export function ProjectSidebar() {
                 Subject Area
               </label>
               <Select value={subjectArea} onValueChange={setSubjectArea}>
-                <SelectTrigger className="w-full">
+                <SelectTrigger className="w-full bg-white">
                   <SelectValue placeholder="Select subject area" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="english">English</SelectItem>
                   <SelectItem value="science">Science</SelectItem>
                   <SelectItem value="math">Mathematics</SelectItem>
@@ -63,7 +63,7 @@ export function ProjectSidebar() {
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Enter project type" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="bg-white">
                   <SelectItem value="annotated">
                     Annotated Bibliography
                   </SelectItem>

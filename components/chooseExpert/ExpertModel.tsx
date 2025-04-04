@@ -94,10 +94,10 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="max-w-3xl p-0">
-        <div className="flex">
+      <DialogContent className="max-w-3xl p-0 text-black overflow-y-auto max-h-[90vh]">
+        <div className="flex flex-col md:flex-row">
           {/* Left side of the Form */}
-          <div className="w-1/2 p-4 bg-white">
+          <div className="w-full md:w-1/2 p-4 bg-white">
             <DialogHeader className="mb-2">
               <div className="flex justify-between items-center">
                 <DialogTitle className="text-xl font-bold">
@@ -151,13 +151,13 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
                   onChange={handleFileAttachment}
                 />
                 {formData.attachedFile && (
-                  <div className="mt-1 text-xs">
+                  <div className="mt-1 text-xs truncate max-w-full">
                     File attached: {formData.attachedFile.name}
                   </div>
                 )}
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-sm font-medium mb-1">Type</label>
                   <Select
@@ -203,7 +203,7 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
               </div>
 
               {/* Word Count and Deadline in same row */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {/* Word Count */}
                 <div>
                   <label className="block text-sm font-medium mb-1">
@@ -239,22 +239,27 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
 
                 {/* Deadline - Popover Calendar */}
                 <div>
-                  <label className=" text-sm font-medium mb-1">Deadline</label>
+                  <label className="text-sm font-medium mb-1">Deadline</label>
                   <DatePickerExpert
-                    value={formData.deadline ? dayjs(formData.deadline).toISOString() : null}
+                    value={
+                      formData.deadline
+                        ? dayjs(formData.deadline).toISOString()
+                        : null
+                    }
                     setValue={(newValue) =>
-                      setFormData((prev) => ({ ...prev, deadline: newValue ? new Date(newValue) : new Date() }))
+                      setFormData((prev) => ({
+                        ...prev,
+                        deadline: newValue ? new Date(newValue) : new Date(),
+                      }))
                     }
                   />
-
-                  {/* <DatePickerExpert value={formData.deadline} setValue ={setFormData}/> */}
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right side - Budget and Info */}
-          <div className="w-1/2 p-4 bg-gray-50">
+          <div className="w-full md:w-1/2 p-4 bg-gray-50">
             {/* Budget */}
             <div className="mb-4">
               <h3 className="font-medium mb-2 text-sm">
@@ -289,7 +294,7 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
 
             {/* Choose Expert Button wala section*/}
             <Button className="w-full hover:cursor-pointer rounded-4xl bg-purple-600 hover:bg-purple-700 text-white py-2 mb-4">
-              <Link href={"/chooseExpert"} className="w-full ">
+              <Link href={"/chooseExpert"} className="w-full">
                 Choose An Expert
               </Link>
             </Button>
@@ -297,7 +302,7 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
             {/* Process Steps */}
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2">
-                <div className="bg-red-100 p-1 rounded-md">
+                <div className="bg-red-100 p-1 rounded-md flex-shrink-0">
                   <span role="img" aria-label="describe" className="text-base">
                     🔍
                   </span>
@@ -308,18 +313,18 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
               </div>
 
               <div className="flex items-start gap-2">
-                <div className="bg-blue-100 p-1 rounded-md">
+                <div className="bg-blue-100 p-1 rounded-md flex-shrink-0">
                   <span role="img" aria-label="experts" className="text-base">
                     👨‍💼
                   </span>
                 </div>
                 <div>
-                  <h4 className="font-medium text-sm">Choose and Experts</h4>
+                  <h4 className="font-medium text-sm">Choose an Expert</h4>
                 </div>
               </div>
 
               <div className="flex items-start gap-2">
-                <div className="bg-green-100 p-1 rounded-md">
+                <div className="bg-green-100 p-1 rounded-md flex-shrink-0">
                   <span role="img" aria-label="payment" className="text-base">
                     💳
                   </span>
@@ -333,7 +338,7 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
               </div>
 
               <div className="flex items-start gap-2">
-                <div className="bg-yellow-100 p-1 rounded-md">
+                <div className="bg-yellow-100 p-1 rounded-md flex-shrink-0">
                   <span role="img" aria-label="warranty" className="text-base">
                     🎁
                   </span>
@@ -346,7 +351,7 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
               </div>
 
               <div className="flex items-start gap-2">
-                <div className="bg-purple-100 p-1 rounded-md">
+                <div className="bg-purple-100 p-1 rounded-md flex-shrink-0">
                   <span role="img" aria-label="ai" className="text-base">
                     🤖
                   </span>
@@ -365,7 +370,7 @@ export default function XpertModal({ isOpen, setIsOpen }: XpertModalProps) {
               </div>
 
               <div className="flex items-start gap-2">
-                <div className="bg-orange-100 p-1 rounded-md">
+                <div className="bg-orange-100 p-1 rounded-md flex-shrink-0">
                   <span
                     role="img"
                     aria-label="protection"
